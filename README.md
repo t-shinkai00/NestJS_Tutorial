@@ -2,7 +2,7 @@
 
 NestJS の練習
 
-[参考](https://r17n.page/2020/05/25/nestjs-tutorial-memo/)
+[参考](https://www.youtube.com/watch?v=HQ3tjl_Sh9s)
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
