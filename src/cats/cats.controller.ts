@@ -18,7 +18,7 @@ export class CatsController {
   }
 
   @Get(':id') // GET /cats/:id で cat が動作
-  cat(@Param('id') id: string): string {
-    return `cat ${id}`;
+  cat(@Param() params): string {
+    return `cat ${params.id}`;
   }
 }
