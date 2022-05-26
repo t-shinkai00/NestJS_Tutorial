@@ -1,9 +1,11 @@
-import { Controller, Get, Post, Param } from '@nestjs/common';
+import { Controller, Get, Post, Param, Req } from '@nestjs/common';
+import { FastifyRequest } from 'fastify';
 
 @Controller('cats')
 export class CatsController {
   @Get() // GET /cats で findAll が動作
-  findAll(): string {
+  findAll(@Req() request: FastifyRequest): string {
+    console.log({ request });
     return 'All cats';
   }
 
