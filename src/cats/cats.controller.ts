@@ -24,6 +24,7 @@ export class CatsController {
   @Redirect('/cats') //Redirectを設定できる
   redirect() {
     console.log('redirect');
+    return { url: '/', statusCode: 301 }; // Redirect先を上書きできる
   }
 
   @Post() // POST /cats で create が動作
