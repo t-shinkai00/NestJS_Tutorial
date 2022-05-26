@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Param, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Param,
+  Req,
+  HttpCode,
+  Header,
+  Redirect,
+} from '@nestjs/common';
 import { FastifyRequest } from 'fastify';
 
 @Controller('cats')
@@ -9,6 +18,12 @@ export class CatsController {
   findAll(@Req() request: FastifyRequest): string {
     console.log({ request });
     return 'All cats';
+  }
+
+  @Get('redirect')
+  @Redirect('/cats') //Redirectを設定できる
+  redirect() {
+    console.log('redirect');
   }
 
   @Post() // POST /cats で create が動作
