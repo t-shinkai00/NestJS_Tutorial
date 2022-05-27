@@ -41,4 +41,9 @@ export class CatsController {
   cat(@Param() params): string {
     return `cat ${params.id}`;
   }
+
+  @Get('async')
+  async findAllAsync(): Promise<string> {
+    return 'All cats(async)';
+  }
 }
