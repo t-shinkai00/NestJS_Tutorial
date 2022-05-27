@@ -8,10 +8,14 @@ import {
   Header,
   Redirect,
   Body,
+  Put,
+  Query,
 } from '@nestjs/common';
 import { FastifyRequest } from 'fastify';
 
 import { CreateCatDto } from './dto/create-cat.dto';
+import { UpdateCatDto } from './dto/update-cat.dto';
+import { ListAllEntities } from './dto/list-all-entities.dto';
 
 @Controller('cats')
 export class CatsController {
@@ -38,6 +42,12 @@ export class CatsController {
   create(@Body() createCatDto: CreateCatDto): string {
     console.log({ createCatDto });
     return 'New cat';
+  }
+
+  @Put(':id')
+  update(@Param('id') id: string, @Body() updateCatDto: UpdateCatDto) {
+    console.log({ updateCatDto });
+    return `Update cat(id: ${id})`;
   }
 
   @Get('mine') // GET /cats/mine で myCat が動作
