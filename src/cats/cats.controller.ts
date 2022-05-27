@@ -7,8 +7,11 @@ import {
   HttpCode,
   Header,
   Redirect,
+  Body,
 } from '@nestjs/common';
 import { FastifyRequest } from 'fastify';
+
+import { CreateCatDto } from './dto/create-cat.dto';
 
 @Controller('cats')
 export class CatsController {
@@ -27,8 +30,9 @@ export class CatsController {
     return { url: '/', statusCode: 301 }; // Redirect先を上書きできる
   }
 
-  @Post() // POST /cats で create が動作
-  create(): string {
+  @Post()
+  create(@Body() createCatDto: CreateCatDto): string {
+    console.log({ createCatDto });
     return 'New cat';
   }
 
