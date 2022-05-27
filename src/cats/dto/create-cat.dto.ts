@@ -6,5 +6,5 @@ export class CreateCatDto {
   @IsNumberString()
   age: number;
   @IsNotEmpty()
-  breeed: string;
+  breed: string;
 }
