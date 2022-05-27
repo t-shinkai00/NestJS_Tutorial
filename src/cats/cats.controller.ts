@@ -18,8 +18,12 @@ export class CatsController {
   @Get() // GET /cats で findAll が動作
   @Header('Foo', 'Bar') // Response Headerを設定できる
   // @HttpCode(204) // HTTP Status Codeを変更できる
-  findAll(@Req() request: FastifyRequest): string {
-    console.log({ request });
+  // findAll(@Req() request: FastifyRequest): string {
+  //   console.log({ request });
+  //   return 'All cats';
+  // }
+  findAll(@Query() querry: ListAllEntities): string {
+    console.log({ querry });
     return 'All cats';
   }
 
