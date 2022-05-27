@@ -42,7 +42,7 @@ export class CatsController {
     return `cat ${params.id}`;
   }
 
-  @Get('async')
+  @Get('async') // async function
   async findAllAsync(): Promise<string> {
     return 'All cats(async)';
   }
